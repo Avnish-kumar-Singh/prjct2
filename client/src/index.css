@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Define keyframes OUTSIDE of @layer */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fly-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  60% {
+    transform: translateY(10px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ✅ Custom animation utility classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fly-in {
+    animation: fly-in 1s ease-out forwards;
+  }
+
+  /* Optional delay utilities for staggered animations */
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+}
+/* index.css */
+body {
+  @apply bg-gradient-to-br from-white to-slate-100; /* Light gradient background */
+}
