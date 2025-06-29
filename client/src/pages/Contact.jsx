@@ -9,7 +9,7 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/contact", form);
+   await axios.post("https://prjct2-uunw.onrender.com/contact", form);
     alert("Message sent!");
     setForm({ name: "", email: "", message: "" });
   };
