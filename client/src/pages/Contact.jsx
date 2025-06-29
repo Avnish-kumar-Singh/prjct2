@@ -3,15 +3,35 @@ import axios from "axios";
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/contact", form);
-    alert("Message sent!");
-    setForm({ name: "", email: "", message: "" });
+    setLoading(true);
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+    console.log("📤 Sending to:", `${apiUrl}/contact`);
+    console.log("📦 Payload:", form);
+
+    try {
+      const response = await axios.post(`${apiUrl}/contact`, form);
+
+      if (response.status === 201 || response.status === 200) {
+        alert("✅ Message sent successfully!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        console.error("⚠️ Unexpected response:", response);
+        alert("❌ Unexpected response from server.");
+      }
+    } catch (error) {
+      console.error("❌ Failed to send message:", error.response || error.message);
+      alert("❌ Failed to send message. Please check your internet or try again later.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -55,13 +75,16 @@ function Contact() {
 
         <button
           type="submit"
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-0.5 hover:scale-105"
+          disabled={loading}
+          className={`w-full ${
+            loading ? "bg-gray-400" : "bg-indigo-600 hover:bg-indigo-700"
+          } text-white py-3 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-0.5 hover:scale-105`}
         >
-          🚀 Send Message
+          {loading ? "Sending..." : "🚀 Send Message"}
         </button>
       </form>
     </div>
   );
 }
 
-export default Contact; 
+export default Contact;
