@@ -13,8 +13,8 @@ function Contact() {
     setLoading(true);
 
     // ✅ Correct fallback URL
-   // const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-1.onrender.com";
-   const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-uunw.onrender.com";
+    const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-1.onrender.com";
+   //const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-uunw.onrender.com";
 
 
     console.log("📤 Sending to:", `${apiUrl}/contact`);
