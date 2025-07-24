@@ -2,18 +2,23 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import Contact from "./models/Contact.js"; // ✅ Your schema file
+import Contact from "./models/Contact.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
-app.use(cors());
-app.use(express.json()); // ✅ To parse JSON from POST body
+// ✅ CORS - Allow only your hosted frontend
+app.use(cors({
+  origin: ["https://prjct2-1.onrender.com"],
+  methods: ["GET", "POST"],
+}));
 
-// Connect to MongoDB
+// ✅ JSON parser
+app.use(express.json());
+
+// ✅ MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -22,7 +27,7 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB error:", err));
 
-// ✅ API Route
+// ✅ Contact route
 app.post("/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -35,6 +40,7 @@ app.post("/contact", async (req, res) => {
   }
 });
 
+// ✅ Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
