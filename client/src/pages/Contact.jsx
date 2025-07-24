@@ -14,8 +14,6 @@ function Contact() {
 
     // ✅ Correct fallback URL
     const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-1.onrender.com";
-   //const apiUrl = import.meta.env.VITE_API_URL || "https://prjct2-uunw.onrender.com";
-
 
     console.log("📤 Sending to:", `${apiUrl}/contact`);
     console.log("📦 Payload:", form);
@@ -91,4 +89,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact;  
