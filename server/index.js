@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 
 // ✅ CORS - Allow only your hosted frontend
 app.use(cors({
- // origin: ["https://prjct2-1.onrender.com"],
- origin: ["https://prjct2-uunw.onrender.com"],
+ origin: ["https://prjct2-1.onrender.com"],
+ //origin: ["https://prjct2-uunw.onrender.com"],
   methods: ["GET", "POST"],
 }));
 
