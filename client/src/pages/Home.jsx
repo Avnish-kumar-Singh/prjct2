@@ -12,8 +12,8 @@ function Home() {
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-300 leading-relaxed animate-fly-in delay-200">
-            I'm a passionate <strong>Full Stack Developer</strong> skilled in{" "}
-            <span className="text-indigo-300 font-semibold">Java, C++, React</span>, and more.  
+            I'm a passionate <strong>Java Backend Developer/ SDE</strong> skilled in{" "}
+            <span className="text-indigo-300 font-semibold">Java, javaScript, React</span>, and more.  
             I love building scalable, modern, and user-centric applications with stunning UI.
           </p>
 
@@ -28,10 +28,10 @@ function Home() {
           {/* About Me Paragraph */}
           <div className="mt-8 text-gray-200 text-justify text-md leading-relaxed animate-fade-in delay-500">
             <p className="mb-4">
-              I'm currently pursuing my degree in Computer Science, where I’ve developed a solid foundation in data structures, algorithms, and software engineering principles. Beyond academics, I actively work on personal projects and enjoy exploring new technologies in web development, AI, and open-source contributions.
+              I'm currently pursuing my degree in Computer Science, where I’ve developed a solid foundation in data structures algorithms and software engineering principles. Beyond academics, I actively work on personal projects and enjoy exploring new technologies in Java Backend Development, web development and AI.
             </p>
             <p>
-              I thrive in collaborative environments and love solving real-world problems with clean, efficient code. Whether it's building responsive user interfaces with React or designing RESTful APIs using Node.js and MongoDB, I'm always eager to learn and take on new challenges. My goal is to create meaningful digital experiences that have a positive impact on people’s lives.
+              I thrive in collaborative environments and love solving real-world problems with clean, efficient code. Whether it's building responsive user interfaces with React or designing RESTful APIs using Node.js/ Spring Boot and MongoDB, I'm always eager to learn and take on new challenges. My goal is to create meaningful digital experiences that have a positive impact on people’s lives.
             </p>
           </div>
         </div>

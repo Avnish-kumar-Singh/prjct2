@@ -30,7 +30,7 @@ function Footer() {
 
         {/* Logo or Name */}
         <div className="text-lg font-bold tracking-wide text-indigo-200 text-center">
-          © 2025 Avnish Kumar • Full Stack Developer
+          © 2025 Avnish Kumar • Java Backend Developer
         </div>
 
         {/* Social Icons */}
